@@ -1,0 +1,12 @@
+{
+  "db": {
+    "host": "localhost",
+    "port": 5432,
+    "url": "postgres://postgres:postgres@localhost/GamesNetwork",
+    "database": "GamesNetwork",
+    "password": "postgres",
+    "name": "db",
+    "user": "postgres",
+    "connector": "postgresql"
+  }
+}
