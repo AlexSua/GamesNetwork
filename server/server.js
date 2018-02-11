@@ -5,6 +5,8 @@ var boot = require('loopback-boot');
 
 var app = module.exports = loopback();
 
+
+
 app.start = function() {
   // start the web server
   return app.listen(function() {
@@ -17,6 +19,9 @@ app.start = function() {
     }
   });
 };
+
+process.on('unhandledRejection', () => {});
+process.on('rejectionHandled', () => {});
 
 // Bootstrap the application, configure models, datasources and middleware.
 // Sub-apps like REST API are mounted via boot scripts.
