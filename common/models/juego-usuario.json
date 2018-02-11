@@ -1,0 +1,38 @@
+{
+  "name": "JuegoUsuario",
+  "plural": "JuegosUsuario",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "valoracion": {
+      "type": "number"
+    },
+    "tiempo": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "juego": {
+      "type": "belongsTo",
+      "model": "Juego",
+      "foreignKey": "idJuego",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "usuario": {
+      "type": "belongsTo",
+      "model": "Usuario",
+      "foreignKey": "idUsuario",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
