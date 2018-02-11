@@ -6,7 +6,17 @@
   "options": {
     "validateUpsert": true
   },
-  "properties": {},
+  "properties": {
+    "nombre":{
+      "type":"string"
+    },
+    "localizacion":{
+      "type":"GeoPoint"
+    },
+    "edad":{
+      "type":"number"
+    }
+  },
   "validations": [],
   "relations": {},
   "acls": [],

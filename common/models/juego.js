@@ -23,7 +23,7 @@ module.exports = function (Juego) {
       let off = page - 1;
       let offset = off * 50;
       const options = {
-        url: `https://api-2445582011268.apicast.io/games/?search=${name}&limit=50&fields=id,name,cover&limit=50&offset=${offset}`,
+        url: `https://api-2445582011268.apicast.io/games/?search=${name}&limit=50&fields=id,name,cover,popularity,total_rating,summary&limit=50&offset=${offset}`,
         headers: {
           'User-Agent': 'request',
           'Accept': 'application/json',
@@ -50,7 +50,8 @@ module.exports = function (Juego) {
       let url = "/juegos/igdb?name=" + name + "&page=" + nextPage;
       if (array.length < 50) {
         url = "";
-      };
+      }
+      ;
       return callback(null, array, url);
     })
       .catch(err => {

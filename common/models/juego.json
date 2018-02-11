@@ -9,7 +9,30 @@
   "properties": {
     "id": {
       "type": "number",
-      "required": true
+      "required": true,
+      "id":true
+    },
+    "nombre":{
+      "type":"string",
+      "required":"true"
+    },
+    "ano":{
+      "type":"date"
+    },
+    "resumen":{
+      "type":"date"
+    },
+    "urlImagen":{
+      "type":"string"
+    },
+    "valoracionIgdb":{
+      "type":"number"
+    },
+    "popularidadIgdb":{
+      "type":"number"
+    },
+    "fechaInsercion":{
+      "type":"date"
     }
   },
   "validations": [],
