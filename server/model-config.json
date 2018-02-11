@@ -46,5 +46,9 @@
   "Juego": {
     "dataSource": "db",
     "public": true
+  },
+  "JuegoUsuario": {
+    "dataSource": "db",
+    "public": true
   }
 }

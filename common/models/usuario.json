@@ -7,18 +7,28 @@
     "validateUpsert": true
   },
   "properties": {
-    "nombre":{
-      "type":"string"
+    "nombre": {
+      "type": "string"
     },
-    "localizacion":{
-      "type":"GeoPoint"
+    "localizacion": {
+      "type": "GeoPoint"
     },
-    "edad":{
-      "type":"number"
+    "edad": {
+      "type": "number"
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "juegos": {
+      "type": "hasMany",
+      "model": "Juego",
+      "foreignKey": "idUsuario",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "JuegoUsuario"
+    }
+  },
   "acls": [],
   "methods": {}
 }

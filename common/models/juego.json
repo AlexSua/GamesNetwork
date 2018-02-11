@@ -2,41 +2,51 @@
   "name": "Juego",
   "plural": "Juegos",
   "base": "PersistedModel",
-  "idInjection": true,
+  "idInjection": false,
   "options": {
     "validateUpsert": true
   },
   "properties": {
     "id": {
       "type": "number",
-      "required": true,
-      "id":true
+      "id": true,
+      "required": true
     },
-    "nombre":{
-      "type":"string",
-      "required":"true"
+    "nombre": {
+      "type": "string",
+      "required": "true"
     },
-    "ano":{
-      "type":"date"
+    "ano": {
+      "type": "date"
     },
-    "resumen":{
-      "type":"date"
+    "resumen": {
+      "type": "date"
     },
-    "urlImagen":{
-      "type":"string"
+    "urlImagen": {
+      "type": "string"
     },
-    "valoracionIgdb":{
-      "type":"number"
+    "valoracionIgdb": {
+      "type": "number"
     },
-    "popularidadIgdb":{
-      "type":"number"
+    "popularidadIgdb": {
+      "type": "number"
     },
-    "fechaInsercion":{
-      "type":"date"
+    "fechaInsercion": {
+      "type": "date"
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "usuarios": {
+      "type": "hasMany",
+      "model": "Usuario",
+      "foreignKey": "idJuego",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "JuegoUsuario"
+    }
+  },
   "acls": [],
   "methods": {}
 }
