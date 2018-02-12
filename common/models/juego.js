@@ -46,6 +46,7 @@ module.exports = function (Juego) {
     return requestPromise.then(data => {
       let array = [];
       array = JSON.parse(data);
+      array.forEach((json)=>json.cover?json.hdCover=json.cover.url.replace("t_thumb","t_1080p"):"");
       let nextPage = (+page) + (+1);
       let url = "/juegos/igdb?name=" + name + "&page=" + nextPage;
       if (array.length < 50) {

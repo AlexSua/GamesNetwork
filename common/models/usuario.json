@@ -23,12 +23,27 @@
       "type": "hasMany",
       "model": "Juego",
       "foreignKey": "idUsuario",
-      "options": {
-        "nestRemoting": true
-      },
-      "through": "JuegoUsuario"
+      "through": "JuegoUsuario",
+      "keyThrough": "idJuego"
+    },
+    "juegosUsuario": {
+      "type": "hasMany",
+      "model": "JuegoUsuario",
+      "foreignKey": "idUsuario"
     }
   },
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    }
+  ],
   "methods": {}
 }
