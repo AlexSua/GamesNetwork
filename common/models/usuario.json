@@ -11,7 +11,7 @@
       "type": "string"
     },
     "localizacion": {
-      "type": "GeoPoint"
+      "type": "geopoint"
     },
     "edad": {
       "type": "number"
@@ -19,13 +19,6 @@
   },
   "validations": [],
   "relations": {
-    "juegos": {
-      "type": "hasMany",
-      "model": "Juego",
-      "foreignKey": "idUsuario",
-      "through": "JuegoUsuario",
-      "keyThrough": "idJuego"
-    },
     "juegosUsuario": {
       "type": "hasMany",
       "model": "JuegoUsuario",

@@ -14,35 +14,42 @@
     },
     "nombre": {
       "type": "string",
-      "required": "true"
+      "required": true
     },
     "ano": {
       "type": "date"
     },
     "resumen": {
-      "type": "date"
+      "type": "string"
     },
     "urlImagen": {
       "type": "string"
     },
     "valoracionIgdb": {
-      "type": "number"
+      "type": "number",
+      "postgresql": {
+        "dataType": "decimal"
+      }
     },
     "popularidadIgdb": {
-      "type": "number"
+      "type": "number",
+      "dataType": "decimal",
+      "postgresql": {
+        "dataType": "decimal"
+      }
     },
     "fechaInsercion": {
-      "type": "date"
+      "type": "date",
+      "required": true,
+      "default": "$now"
     }
   },
   "validations": [],
   "relations": {
     "usuarios": {
       "type": "hasMany",
-      "model": "Usuario",
-      "foreignKey": "idJuego",
-      "through": "JuegoUsuario",
-      "keyThrough": "idUsuario"
+      "model": "JuegoUsuario",
+      "foreignKey": "idJuego"
     }
   },
   "acls": [

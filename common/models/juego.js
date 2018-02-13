@@ -11,10 +11,7 @@ module.exports = function (Juego) {
   //   cb(null,response);
   // };
 
-
   Juego.igdb = function (name, page, callback) {
-
-
     const requestPromise = new Promise((resolve, reject) => {
 
       if (!page || page === "" || page <= 1) {
@@ -23,7 +20,7 @@ module.exports = function (Juego) {
       let off = page - 1;
       let offset = off * 50;
       const options = {
-        url: `https://api-2445582011268.apicast.io/games/?search=${name}&limit=50&fields=id,name,cover,popularity,total_rating,summary&limit=50&offset=${offset}`,
+        url: `https://api-2445582011268.apicast.io/games/?search=${name}&limit=50&fields=id,name,cover,popularity,total_rating,first_release_date,summary&limit=50&offset=${offset}`,
         headers: {
           'User-Agent': 'request',
           'Accept': 'application/json',
