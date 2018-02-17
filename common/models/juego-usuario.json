@@ -9,12 +9,12 @@
   "properties": {
     "idJuego": {
       "type": "number",
-      "id":1,
+      "id": 1,
       "required": true
     },
     "idUsuario": {
       "type": "number",
-      "id":1,
+      "id": 1,
       "required": true
     },
     "valoracion": {

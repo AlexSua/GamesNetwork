@@ -4,15 +4,12 @@ var Request = require('request');
 module.exports = function (Juegousuario) {
 
   Juegousuario.observe("before save", function (ctx, next) {
-
     let app = Juegousuario.app;
     let Juego = app.models.Juego;
     let idJuego = ctx.instance.idJuego;
-
     Juego.exists(idJuego, function (err, exists) {
       if (exists) {
         next();
-
       } else {
         const requestPromise = new Promise((resolve, reject) => {
           const options = {
@@ -42,7 +39,7 @@ module.exports = function (Juegousuario) {
           Juego.create({
             "id": json.id,
             "nombre": json.name,
-            "ano": json.first_release_date?first_release_date:null,
+            "ano": json.first_release_date ? json.first_release_date : null,
             "resumen": json.summary ? json.summary : "",
             "urlImagen": json.cover ? json.cover.url.replace("t_thumb", "t_1080p") : "",
             "valoracionIgdb": json.total_rating ? json.total_rating : "",
