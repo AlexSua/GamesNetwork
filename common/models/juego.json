@@ -69,7 +69,7 @@
       "principalType": "ROLE",
       "principalId": "$everyone",
       "permission": "ALLOW",
-      "property":"igdb"
+      "property": "igdb"
     }
   ],
   "methods": {}

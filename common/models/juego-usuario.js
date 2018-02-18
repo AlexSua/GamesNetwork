@@ -40,7 +40,7 @@ Juegousuario.observe("before save", function (ctx, next) {
             "nombre": json.name,
             "ano": json.first_release_date ? json.first_release_date : null,
             "resumen": json.summary ? json.summary : "",
-            "urlImagen": json.cover ? json.cover.url.replace("t_thumb", "t_1080p") : "",
+            "urlImagen": json.cover ? json.cover.url.replace("t_thumb", "t_720p") : "",
             "valoracionIgdb": json.total_rating ? json.total_rating : "",
             "popularidadIgdb": json.popularity ? json.popularity : ""
           }, function (err, obj) {
