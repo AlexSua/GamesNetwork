@@ -2,8 +2,7 @@
 var Request = require('request');
 
 module.exports = function (Juegousuario) {
-
-  Juegousuario.observe("before save", function (ctx, next) {
+Juegousuario.observe("before save", function (ctx, next) {
     let app = Juegousuario.app;
     let Juego = app.models.Juego;
     let idJuego = ctx.instance.idJuego;
@@ -58,5 +57,10 @@ module.exports = function (Juegousuario) {
       }
     });
   });
+
+  //Metodos no usados
+  Juegousuario.disableRemoteMethodByName('prototype.__get__juego');
+  Juegousuario.disableRemoteMethodByName('prototype.__get__usuario');
+  Juegousuario.disableRemoteMethodByName('createChangeStream');
 }
 

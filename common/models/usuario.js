@@ -17,4 +17,7 @@ module.exports = function(Usuario) {
     //     }
     // })
 
+
+ //Metodos no usados
+ Usuario.disableRemoteMethodByName('createChangeStream');
 };

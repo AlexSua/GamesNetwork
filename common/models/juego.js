@@ -90,4 +90,17 @@ module.exports = function (Juego) {
       returns: [{arg: 'juegos', type: 'array'}, {arg: 'paginaSiguiente', type: 'string'}]
     }
   );
+
+  //Metodos no usados
+  Juego.disableRemoteMethodByName('createChangeStream');
+  Juego.disableRemoteMethodByName('create');
+  Juego.disableRemoteMethodByName('delete');
+  Juego.disableRemoteMethodByName('deleteById');
+  Juego.disableRemoteMethodByName('prototype.updateAttributes');
+  Juego.disableRemoteMethodByName('prototype.__delete__usuarios');
+  Juego.disableRemoteMethodByName('prototype.__delete__usuarios');
+  Juego.disableRemoteMethodByName('prototype.__create__usuarios');
+  Juego.disableRemoteMethodByName('prototype.__updateById__usuarios');
+  Juego.disableRemoteMethodByName('prototype.__destroyById__usuarios');
+
 };

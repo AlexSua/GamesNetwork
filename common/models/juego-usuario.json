@@ -2,7 +2,7 @@
   "name": "JuegoUsuario",
   "plural": "JuegosUsuario",
   "base": "PersistedModel",
-  "idInjection": true,
+  "idInjection": false,
   "options": {
     "validateUpsert": true
   },
