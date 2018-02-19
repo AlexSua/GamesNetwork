@@ -918,43 +918,6 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
 
             /**
              * @ngdoc method
-             * @name lbServices.Usuario#createChangeStream
-             * @methodOf lbServices.Usuario
-             *
-             * @description
-             *
-             * Create a change stream.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *   This method does not accept any parameters.
-             *   Supply an empty object or omit this argument altogether.
-             *
-             * @param {Object} postData Request data.
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * Data properties:
-             *
-             *  - `changes` – `{ReadableStream=}` -
-             */
-            "createChangeStream": {
-              url: urlBase + "/Usuarios/change-stream",
-              method: "POST",
-            },
-
-            /**
-             * @ngdoc method
              * @name lbServices.Usuario#login
              * @methodOf lbServices.Usuario
              *
@@ -1241,12 +1204,6 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
             "setPassword": {
               url: urlBase + "/Usuarios/reset-password",
               method: "POST",
-            },
-
-            // INTERNAL. Use JuegoUsuario.usuario() instead.
-            "::get::JuegoUsuario::usuario": {
-              url: urlBase + "/JuegosUsuario/:id/usuario",
-              method: "GET",
             },
 
             /**
@@ -1958,24 +1915,6 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
               method: "GET",
             },
 
-            // INTERNAL. Use Juego.usuarios.destroyById() instead.
-            "prototype$__destroyById__usuarios": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/Juegos/:id/usuarios/:fk",
-              method: "DELETE",
-            },
-
-            // INTERNAL. Use Juego.usuarios.updateById() instead.
-            "prototype$__updateById__usuarios": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/Juegos/:id/usuarios/:fk",
-              method: "PUT",
-            },
-
             // INTERNAL. Use Juego.usuarios() instead.
             "prototype$__get__usuarios": {
               isArray: true,
@@ -1983,103 +1922,10 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
               method: "GET",
             },
 
-            // INTERNAL. Use Juego.usuarios.create() instead.
-            "prototype$__create__usuarios": {
-              url: urlBase + "/Juegos/:id/usuarios",
-              method: "POST",
-            },
-
-            // INTERNAL. Use Juego.usuarios.destroyAll() instead.
-            "prototype$__delete__usuarios": {
-              url: urlBase + "/Juegos/:id/usuarios",
-              method: "DELETE",
-            },
-
             // INTERNAL. Use Juego.usuarios.count() instead.
             "prototype$__count__usuarios": {
               url: urlBase + "/Juegos/:id/usuarios/count",
               method: "GET",
-            },
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Juego#create
-             * @methodOf lbServices.Juego
-             *
-             * @description
-             *
-             * Create a new instance of the model and persist it into the data source.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *   This method does not accept any parameters.
-             *   Supply an empty object or omit this argument altogether.
-             *
-             * @param {Object} postData Request data.
-             *
-             *  - `data` – `{object=}` - Model instance data
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Juego` object.)
-             * </em>
-             */
-            "create": {
-              url: urlBase + "/Juegos",
-              method: "POST",
-            },
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Juego#createMany
-             * @methodOf lbServices.Juego
-             *
-             * @description
-             *
-             * Create a new instance of the model and persist it into the data source.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *   This method does not accept any parameters.
-             *   Supply an empty object or omit this argument altogether.
-             *
-             * @param {Object} postData Request data.
-             *
-             *  - `data` – `{object=}` - Model instance data
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Array.<Object>,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Array.<Object>} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Juego` object.)
-             * </em>
-             */
-            "createMany": {
-              isArray: true,
-              url: urlBase + "/Juegos",
-              method: "POST",
             },
 
             /**
@@ -2415,41 +2261,6 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
 
             /**
              * @ngdoc method
-             * @name lbServices.Juego#deleteById
-             * @methodOf lbServices.Juego
-             *
-             * @description
-             *
-             * Delete a model instance by {{id}} from the data source.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - Model id
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Juego` object.)
-             * </em>
-             */
-            "deleteById": {
-              url: urlBase + "/Juegos/:id",
-              method: "DELETE",
-            },
-
-            /**
-             * @ngdoc method
              * @name lbServices.Juego#count
              * @methodOf lbServices.Juego
              *
@@ -2480,82 +2291,6 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
             "count": {
               url: urlBase + "/Juegos/count",
               method: "GET",
-            },
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Juego#prototype$patchAttributes
-             * @methodOf lbServices.Juego
-             *
-             * @description
-             *
-             * Patch attributes for a model instance and persist it into the data source.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - Juego id
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `data` – `{object=}` - An object of model property name/value pairs
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Juego` object.)
-             * </em>
-             */
-            "prototype$patchAttributes": {
-              url: urlBase + "/Juegos/:id",
-              method: "PATCH",
-            },
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Juego#createChangeStream
-             * @methodOf lbServices.Juego
-             *
-             * @description
-             *
-             * Create a change stream.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *   This method does not accept any parameters.
-             *   Supply an empty object or omit this argument altogether.
-             *
-             * @param {Object} postData Request data.
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * Data properties:
-             *
-             *  - `changes` – `{ReadableStream=}` -
-             */
-            "createChangeStream": {
-              url: urlBase + "/Juegos/change-stream",
-              method: "POST",
             },
 
             /**
@@ -2593,12 +2328,6 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
              */
             "igdb": {
               url: urlBase + "/Juegos/IGDB",
-              method: "GET",
-            },
-
-            // INTERNAL. Use JuegoUsuario.juego() instead.
-            "::get::JuegoUsuario::juego": {
-              url: urlBase + "/JuegosUsuario/:id/juego",
               method: "GET",
             },
           }
@@ -2739,106 +2468,6 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
              */
         R["update"] = R["updateAll"];
 
-            /**
-             * @ngdoc method
-             * @name lbServices.Juego#destroyById
-             * @methodOf lbServices.Juego
-             *
-             * @description
-             *
-             * Delete a model instance by {{id}} from the data source.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - Model id
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Juego` object.)
-             * </em>
-             */
-        R["destroyById"] = R["deleteById"];
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Juego#removeById
-             * @methodOf lbServices.Juego
-             *
-             * @description
-             *
-             * Delete a model instance by {{id}} from the data source.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - Model id
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Juego` object.)
-             * </em>
-             */
-        R["removeById"] = R["deleteById"];
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Juego#updateAttributes
-             * @methodOf lbServices.Juego
-             *
-             * @description
-             *
-             * Patch attributes for a model instance and persist it into the data source.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - Juego id
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `data` – `{object=}` - An object of model property name/value pairs
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Juego` object.)
-             * </em>
-             */
-        R["updateAttributes"] = R["prototype$patchAttributes"];
-
 
         /**
         * @ngdoc property
@@ -2946,164 +2575,6 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
 
             /**
              * @ngdoc method
-             * @name lbServices.Juego.usuarios#create
-             * @methodOf lbServices.Juego.usuarios
-             *
-             * @description
-             *
-             * Creates a new instance in usuarios of this model.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - Juego id
-             *
-             * @param {Object} postData Request data.
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `data` – `{object=}` -
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `JuegoUsuario` object.)
-             * </em>
-             */
-        R.usuarios.create = function() {
-          var TargetResource = $injector.get("JuegoUsuario");
-          var action = TargetResource["::create::Juego::usuarios"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Juego.usuarios#createMany
-             * @methodOf lbServices.Juego.usuarios
-             *
-             * @description
-             *
-             * Creates a new instance in usuarios of this model.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - Juego id
-             *
-             * @param {Object} postData Request data.
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `data` – `{object=}` -
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Array.<Object>,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Array.<Object>} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `JuegoUsuario` object.)
-             * </em>
-             */
-        R.usuarios.createMany = function() {
-          var TargetResource = $injector.get("JuegoUsuario");
-          var action = TargetResource["::createMany::Juego::usuarios"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Juego.usuarios#destroyAll
-             * @methodOf lbServices.Juego.usuarios
-             *
-             * @description
-             *
-             * Deletes all usuarios of this model.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - Juego id
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `where` – `{object=}` -
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * This method returns no data.
-             */
-        R.usuarios.destroyAll = function() {
-          var TargetResource = $injector.get("JuegoUsuario");
-          var action = TargetResource["::delete::Juego::usuarios"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Juego.usuarios#destroyById
-             * @methodOf lbServices.Juego.usuarios
-             *
-             * @description
-             *
-             * Delete a related item by id for usuarios.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - Juego id
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `fk` – `{*}` - Foreign key for usuarios
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * This method returns no data.
-             */
-        R.usuarios.destroyById = function() {
-          var TargetResource = $injector.get("JuegoUsuario");
-          var action = TargetResource["::destroyById::Juego::usuarios"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
              * @name lbServices.Juego.usuarios#findById
              * @methodOf lbServices.Juego.usuarios
              *
@@ -3142,50 +2613,6 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
           return action.apply(R, arguments);
         };
 
-            /**
-             * @ngdoc method
-             * @name lbServices.Juego.usuarios#updateById
-             * @methodOf lbServices.Juego.usuarios
-             *
-             * @description
-             *
-             * Update a related item by id for usuarios.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - Juego id
-             *
-             *  - `fk` – `{*}` - Foreign key for usuarios
-             *
-             * @param {Object} postData Request data.
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `data` – `{object=}` -
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `JuegoUsuario` object.)
-             * </em>
-             */
-        R.usuarios.updateById = function() {
-          var TargetResource = $injector.get("JuegoUsuario");
-          var action = TargetResource["::updateById::Juego::usuarios"];
-          return action.apply(R, arguments);
-        };
-
 
         return R;
       }]);
@@ -3216,18 +2643,6 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
         urlBase + "/JuegosUsuario/:id",
           { 'id': '@id' },
           {
-
-            // INTERNAL. Use JuegoUsuario.juego() instead.
-            "prototype$__get__juego": {
-              url: urlBase + "/JuegosUsuario/:id/juego",
-              method: "GET",
-            },
-
-            // INTERNAL. Use JuegoUsuario.usuario() instead.
-            "prototype$__get__usuario": {
-              url: urlBase + "/JuegosUsuario/:id/usuario",
-              method: "GET",
-            },
 
             /**
              * @ngdoc method
@@ -3721,10 +3136,6 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
              *
              * @param {Object=} parameters Request parameters.
              *
-             *  - `id` – `{*}` - JuegoUsuario id
-             *
-             *  - `options` – `{object=}` -
-             *
              *  - `data` – `{object=}` - An object of model property name/value pairs
              *
              *  - `options` – `{object=}` -
@@ -3747,43 +3158,6 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
             "prototype$patchAttributes": {
               url: urlBase + "/JuegosUsuario/:id",
               method: "PATCH",
-            },
-
-            /**
-             * @ngdoc method
-             * @name lbServices.JuegoUsuario#createChangeStream
-             * @methodOf lbServices.JuegoUsuario
-             *
-             * @description
-             *
-             * Create a change stream.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *   This method does not accept any parameters.
-             *   Supply an empty object or omit this argument altogether.
-             *
-             * @param {Object} postData Request data.
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * Data properties:
-             *
-             *  - `changes` – `{ReadableStream=}` -
-             */
-            "createChangeStream": {
-              url: urlBase + "/JuegosUsuario/change-stream",
-              method: "POST",
             },
 
             // INTERNAL. Use Usuario.juegosUsuario.findById() instead.
@@ -3854,48 +3228,11 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
               method: "GET",
             },
 
-            // INTERNAL. Use Juego.usuarios.destroyById() instead.
-            "::destroyById::Juego::usuarios": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/Juegos/:id/usuarios/:fk",
-              method: "DELETE",
-            },
-
-            // INTERNAL. Use Juego.usuarios.updateById() instead.
-            "::updateById::Juego::usuarios": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/Juegos/:id/usuarios/:fk",
-              method: "PUT",
-            },
-
             // INTERNAL. Use Juego.usuarios() instead.
             "::get::Juego::usuarios": {
               isArray: true,
               url: urlBase + "/Juegos/:id/usuarios",
               method: "GET",
-            },
-
-            // INTERNAL. Use Juego.usuarios.create() instead.
-            "::create::Juego::usuarios": {
-              url: urlBase + "/Juegos/:id/usuarios",
-              method: "POST",
-            },
-
-            // INTERNAL. Use Juego.usuarios.createMany() instead.
-            "::createMany::Juego::usuarios": {
-              isArray: true,
-              url: urlBase + "/Juegos/:id/usuarios",
-              method: "POST",
-            },
-
-            // INTERNAL. Use Juego.usuarios.destroyAll() instead.
-            "::delete::Juego::usuarios": {
-              url: urlBase + "/Juegos/:id/usuarios",
-              method: "DELETE",
             },
 
             // INTERNAL. Use Juego.usuarios.count() instead.
@@ -4116,10 +3453,6 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
              *
              * @param {Object=} parameters Request parameters.
              *
-             *  - `id` – `{*}` - JuegoUsuario id
-             *
-             *  - `options` – `{object=}` -
-             *
              *  - `data` – `{object=}` - An object of model property name/value pairs
              *
              *  - `options` – `{object=}` -
@@ -4152,86 +3485,6 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
         */
         R.modelName = "JuegoUsuario";
 
-
-            /**
-             * @ngdoc method
-             * @name lbServices.JuegoUsuario#juego
-             * @methodOf lbServices.JuegoUsuario
-             *
-             * @description
-             *
-             * Fetches belongsTo relation juego.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - JuegoUsuario id
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `refresh` – `{boolean=}` -
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Juego` object.)
-             * </em>
-             */
-        R.juego = function() {
-          var TargetResource = $injector.get("Juego");
-          var action = TargetResource["::get::JuegoUsuario::juego"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.JuegoUsuario#usuario
-             * @methodOf lbServices.JuegoUsuario
-             *
-             * @description
-             *
-             * Fetches belongsTo relation usuario.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - JuegoUsuario id
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `refresh` – `{boolean=}` -
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Usuario` object.)
-             * </em>
-             */
-        R.usuario = function() {
-          var TargetResource = $injector.get("Usuario");
-          var action = TargetResource["::get::JuegoUsuario::usuario"];
-          return action.apply(R, arguments);
-        };
 
 
         return R;
