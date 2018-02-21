@@ -1,3 +1,3 @@
-# My Application
+# GamesNetwork
 
-Es un proyecto de prueba
+Servidor REST para la asignatura de Servicios REST
